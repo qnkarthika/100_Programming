@@ -8,7 +8,7 @@ class Main {
         int n = s.nextInt();
         int arr[] = new int[n];
         System.out.print("Enter array elements: ");
-        for (int i = 0; i < n; i++) { // Corrected loop condition
+        for (int i = 0; i < n; i++) { 
             arr[i] = s.nextInt();
         }
         int sumOfNatural = n * (n + 1) / 2;
