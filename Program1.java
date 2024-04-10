@@ -1,7 +1,7 @@
 1.Factorial of Given Number
   
 import java.util.*;
-class HelloWorld {
+class Main{
     public static void main(String[] args) {
         Scanner s=new Scanner(System.in);
         
