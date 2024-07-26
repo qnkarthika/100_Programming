@@ -11,28 +11,38 @@ Explanation: Given numbers are {“3”, “30”, “34”, “5”, “9”}, 
 
 Solution:
 
-import java.util.*;
-class BiggestNumber {
-    public static void main(String[] args) {
-        Scanner s=new Scanner(System.in);
-        int n=s.nextInt();
-        String str[]=new String[n];
-        for(int i=0;i<n;i++){
-            str[i]=s.next();
+class Solution {
+    public String largestNumber(int[] nums) {
+        int n = nums.length;
+        
+        String[] strNums = new String[n];
+        for (int i = 0; i < n; i++) {
+            strNums[i] = Integer.toString(nums[i]);
         }
-        for(int i=0;i<n-1;i++){
-            for(int j=i+1;j<n;j++){
-                String ab=str[i]+str[j];
-                String ba=str[j]+str[i];
-                if(Integer.parseInt(ba)>Integer.parseInt(ab)){
-                    String temp=str[i];
-                    str[i]=str[j];
-                    str[j]=temp;
+        
+       
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                String ab = strNums[i] + strNums[j];
+                String ba = strNums[j] + strNums[i];
+                if (ba.compareTo(ab) > 0) {
+                 
+                    String temp = strNums[i];
+                    strNums[i] = strNums[j];
+                    strNums[j] = temp;
                 }
             }
+        } 
+       
+        StringBuilder result = new StringBuilder();
+        for (String str : strNums) {
+            result.append(str);
         }
-        for(int i=0;i<n;i++){
-            System.out.print(str[i]);
+        
+       
+        if (result.charAt(0) == '0') {
+            return "0";
         }
+        return result.toString();
     }
 }
