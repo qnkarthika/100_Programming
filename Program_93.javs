@@ -13,8 +13,8 @@ class Main {
         for(int ele:arr){
             count.put(ele,count.getOrDefault(ele,0)+1);
         }
-        for(HashMap.Entry<Integer,Integer> entry:count.entrySet()){
-            System.out.println(entry.getKey()+" "+entry.getValue());
+        for(HashMap<Integer,Integer> key:count.keySet()){
+            System.out.println(key+" "+count.get(key));
         }
     }
     public static void main(String[] args) {
